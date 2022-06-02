@@ -48,10 +48,10 @@ $(function() {
         $.post('/api/login', $(this).serialize(), function(res) {
             if (res.status != 0) return layer.msg(res.message)
             layer.msg('登录成功')
-                // localStorage.getItem永久存储
-            localStorage.getItem(res.token)
+                // localStorage.setItem永久存储
+            localStorage.setItem('token', res.token)
                 // 跳转页面location.href
-            location.href = '/index.html'
+            location.href = '/8.0用户验证案例/笔记/大事件项目/index.html'
         })
     })
 })
